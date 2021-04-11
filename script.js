@@ -89,10 +89,10 @@ document.getElementById('button-enter').onclick = function getSavings() {
     }
 
     // if coffee amount is zero or negative, prompt the user to enter a valid number
-    else if (qty < 0 || qty == null) { 
+    else if (qty < 0 || qty == '') { 
         // erase the last requested information
         savings.innerHTML = '';
-        alert('Please enter a positive integer.');
+        alert('Please enter a positive number.');
         location.reload();
     }
     else {
@@ -108,7 +108,7 @@ document.getElementById('button-enter').onclick = function getSavings() {
             coffees.forEach(function(coffees) {
                 if (coffees.name == coffee_choice) {
                     coffee_name = coffees.name;
-                    sb_price = coffees.price; 
+                    sb_price = coffees.price.toFixed(2); 
                     console.log(sb_price);
 
                     // show the requested drink's prices
