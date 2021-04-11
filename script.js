@@ -47,17 +47,19 @@ savings.appendChild(p3)
 // Shop our Recommendations Button
 let rec_btn = document.createElement('button')
 rec_btn.textContent = "Shop Our Recommendations"
+rec_btn.setAttribute('class', 'shadow')
+rec_btn.setAttribute('style', 'margin-top: 2em; margin-bottom: 2em; padding-left: 1em; padding-right: 1em; min-height: 2.5em; max-height: auto; color: #1f3a32; border-style: solid; border-radius: 2.5em; border-width: .05em; border-color: #000000; background-color: #f4f3f1')
 let amz_products = document.createElement('div')
-amz_products.innerHTML += '<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=savebucks0c-20&language=en_US&marketplace=amazon&region=US&placement=B01LTI9606&asins=B01LTI9606&linkId=5ccf62e07c011e761570709425220fad&show_border=true&link_opens_in_new_window=true"></iframe>';
-amz_products.innerHTML += '<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=savebucks0c-20&language=en_US&marketplace=amazon&region=US&placement=B07B48MWZJ&asins=B07B48MWZJ&linkId=005ee5da9e0ddb1d29cb27b6ddd95ebf&show_border=true&link_opens_in_new_window=true"></iframe>';
-amz_products.innerHTML += '      <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=savebucks0c-20&language=en_US&marketplace=amazon&region=US&placement=B07MVC8S2X&asins=B07MVC8S2X&linkId=689394ff8c2c18b00f1286e27e315109&show_border=true&link_opens_in_new_window=true"></iframe>';
+amz_products.innerHTML += '<iframe style="width:120px;height:240px;margin:1em;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=savebucks0c-20&language=en_US&marketplace=amazon&region=US&placement=B01LTI9606&asins=B01LTI9606&linkId=5ccf62e07c011e761570709425220fad&show_border=true&link_opens_in_new_window=true"></iframe>';
+amz_products.innerHTML += '<iframe style="width:120px;height:240px;margin:1em;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=savebucks0c-20&language=en_US&marketplace=amazon&region=US&placement=B07B48MWZJ&asins=B07B48MWZJ&linkId=005ee5da9e0ddb1d29cb27b6ddd95ebf&show_border=true&link_opens_in_new_window=true"></iframe>';
+amz_products.innerHTML += '<iframe style="width:120px;height:240px;margin:1em;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=savebucks0c-20&language=en_US&marketplace=amazon&region=US&placement=B07MVC8S2X&asins=B07MVC8S2X&linkId=689394ff8c2c18b00f1286e27e315109&show_border=true&link_opens_in_new_window=true"></iframe>';
 rec_btn.onclick = function(){
     savings.appendChild(amz_products);
 }
 
-p1.setAttribute('style', 'white-space: pre;')
-p2.setAttribute('style', 'white-space: pre;')
-p3.setAttribute('style', 'white-space: pre;')
+p1.setAttribute('style', 'white-space: pre-line;')
+p2.setAttribute('style', 'white-space: pre-line;')
+p3.setAttribute('style', 'white-space: pre-line;')
 
 // Take user input, output total savings
 
@@ -73,15 +75,28 @@ document.getElementById('button-enter').onclick = function getSavings() {
     let qty = 0;
     qty = document.getElementById('input-qty').value;
 
+    // if coffee amount is more than 10, prompt a friendly warning message
+    if (qty > 10) { 
+        alert('That\'s a lot of coffee.');
+    }
+
     // if coffee or amount empty, re-prompt user to choose drink first ---set placeholder and then value == 0 for this to work
-    if (coffee_choice == "Choose your coffee order" || qty == 0) { 
+    if (coffee_choice == "Choose your coffee") { 
         // erase the last requested information
         savings.innerHTML = '';
-        alert('Please choose a drink & quantity first. ');
+        alert('Please choose a drink first. ');
         location.reload();
     }
 
+    // if coffee amount is zero or negative, prompt the user to enter a valid number
+    else if (qty < 0 || qty == null) { 
+        // erase the last requested information
+        savings.innerHTML = '';
+        alert('Please enter a positive integer.');
+        location.reload();
+    }
     else {
+  
         let sb_price = 0;
         let coffee_name = "";
 
@@ -108,7 +123,7 @@ document.getElementById('button-enter').onclick = function getSavings() {
             
                     // add styling to new html content
                     let newStyle = document.querySelector('#results');
-                    newStyle.classList.add("output");
+                    newStyle.classList.add('output');
 
                     // show total potential investment 
                     p3.innerHTML = '';
@@ -128,7 +143,7 @@ document.getElementById('button-enter').onclick = function getSavings() {
                     var total_val = addCommas(calcTotalValue(55, parseInt(daily_savings)));
                     p3.textContent += 'After 55 years at a 7% return, \r\n'
                     p3.textContent += 'you would have $' + total_val + '!\r\n'
-                    p3.innerHTML += `<img style="margin:20px; width:500px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="woah.gif" alt="Bill Nye is amazed gif"/>`;
+                    p3.innerHTML += `<img style="margin-top: 2em; border-radius: .1em; margin-bottom: .05em; width:80%; height: auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="woah.gif" alt="Bill Nye is amazed gif"/><p class="image-source">via GIPHY</p>`;
                     
                     // add shop our recommendations button
                     savings.appendChild(rec_btn)
@@ -143,3 +158,5 @@ document.getElementById('button-enter').onclick = function getSavings() {
 function addCommas (number) {
     return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
 }
+
+
