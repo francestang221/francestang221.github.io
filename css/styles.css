@@ -9,6 +9,9 @@ body {
   margin:0px;
 }
 
+img {
+  border-radius: 15px;
+}
 
 .name {
   margin: 0;
