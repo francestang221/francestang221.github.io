@@ -1,0 +1,226 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F9F5F5;
+  font-family: 'Roboto', sans-serif;
+  margin:0px;
+}
+
+
+.name {
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  color: darkturquoise;
+}
+
+h1,h2 {
+  margin-top: 20px;
+  padding-left: 32px;
+  text-align:center;
+  font-size: 24px;
+  font-family: 'Satisfy', cursive;
+  font-weight: lighter;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+}
+
+.button {
+  background-color: white;
+  margin-left: -2.4rem;
+  margin-right: 0rem;
+  margin-top:10px;
+  padding:10px;
+  font-family: 'Satisfy', cursive;
+}
+
+
+.nav a:hover {
+  color: turquoise;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+section {
+  background-color: white;
+  display:block;
+  padding-bottom: 10px;
+}
+
+
+.nav,
+.profile-photo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  width: 80%;
+}
+
+
+p {
+  text-align: center;
+  color: darkgray;
+}
+
+
+/*portfolio*/
+
+#portfolio {
+  padding: 20px;
+}
+
+.portfolio-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:96%;
+}
+
+p {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 80%;
+}
+
+/*Skills*/
+
+.skills {
+  margin-top: 0;
+  padding-top: 8px;
+  background-color: ghostwhite;
+}
+
+.languages li {
+  font-weight: bold;
+  color:purple;
+  padding: 10px;
+  margin: 10px;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+
+
+/*footer*/
+
+.bottom-name {
+  float:left;
+}
+
+.backtotop{
+  display:inline-block;
+  float: right;
+  padding-right: 10px;
+  max-width: 50%;
+}
+
+.bottom-nav {
+  display:none;
+}
+
+
+
+/*for Tablet*/
+
+/***tablet navigation menu****/
+
+@media (min-width: 768px) {
+
+li {
+  display: inline-block;
+  margin: auto;
+}
+
+.button {
+  background-color: #F9F5F5;
+  margin:10px;
+  padding:10px;
+}
+
+/**intro two columns **/
+
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.wrapper > div {
+  flex: 1;
+}
+
+/**portofolio two colums**/
+
+
+.project {
+  float:right;
+  max-width: 50%;
+  display:inline-block;
+}
+
+/**bottom navigation bar**/
+
+.backtotop {
+  display:none;
+}
+
+.bottom-nav {
+  float:right;
+  font-family:'Roboto', sans-serif;
+  display:inline-block;
+}
+
+.bottom-nav li {
+  padding:10px;
+}
+
+.bottom-nav li a:hover {
+  color: turquoise;
+}
+
+
+
+
+
+}
+
+/*for Desktop*/
+@media (min-width: 1024px){
+
+  .name {
+    float:left;
+  }
+
+
+.nav {
+  margin:auto;
+  float:right;
+  width: 46%;
+  }
+
+.button {
+  padding:10px;
+  float:left;
+}
+
+  .project {
+    float:right;
+    margin:auto;
+    max-width: 33.3%;
+  }
+
+}
