@@ -1,28 +1,25 @@
 
 * {
   box-sizing: border-box;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
-  background-color: #F9F5F5;
-  font-family: 'Roboto', sans-serif;
+  background-color: #014049;
   margin:0px;
 }
 
 
 .name {
   margin: 0;
-  font-family: 'Dancing Script', cursive;
-  color: darkturquoise;
 }
 
 h1,h2 {
+  color: #2a9d8f; 
   margin-top: 20px;
   padding-left: 32px;
   text-align:center;
   font-size: 24px;
-  font-family: 'Satisfy', cursive;
-  font-weight: lighter;
 }
 
 ul {
@@ -31,17 +28,18 @@ ul {
 }
 
 .button {
-  background-color: white;
   margin-left: -2.4rem;
   margin-right: 0rem;
   margin-top:10px;
   padding:10px;
-  font-family: 'Satisfy', cursive;
 }
 
+.nav a {
+  color: #e9c46a;
+}
 
 .nav a:hover {
-  color: turquoise;
+  color: #e76f51;
 }
 
 
@@ -52,7 +50,6 @@ a {
 
 
 section {
-  background-color: white;
   display:block;
   padding-bottom: 10px;
 }
@@ -70,7 +67,7 @@ section {
 
 p {
   text-align: center;
-  color: darkgray;
+  color: #9de2d0; 
 }
 
 
@@ -88,6 +85,7 @@ p {
 }
 
 p {
+  font-size: 20px;
   display:block;
   margin-left: auto;
   margin-right: auto;
@@ -100,14 +98,13 @@ p {
 .skills {
   margin-top: 0;
   padding-top: 8px;
-  background-color: ghostwhite;
 }
 
 .languages li {
-  font-weight: bold;
-  color:purple;
+  color:#f4a261; 
   padding: 10px;
   margin: 10px;
+  font-size: 20px;
 }
 
 .clearfix {
@@ -118,15 +115,18 @@ p {
 
 /*footer*/
 
-.bottom-name {
-  float:left;
-}
-
 .backtotop{
   display:inline-block;
-  float: right;
   padding-right: 10px;
   max-width: 50%;
+}
+
+.backtotop a {  
+  color: #2a9d8f;
+}
+
+.backtotop a:hover {  
+  color: #e76f51;
 }
 
 .bottom-nav {
@@ -146,8 +146,14 @@ li {
   margin: auto;
 }
 
+li a {
+  display: inline-block;
+  margin: auto;
+  font-size: 20px;
+  color: #2a9d8f;
+}
+
 .button {
-  background-color: #F9F5F5;
   margin:10px;
   padding:10px;
 }
@@ -180,7 +186,6 @@ li {
 
 .bottom-nav {
   float:right;
-  font-family:'Roboto', sans-serif;
   display:inline-block;
 }
 
@@ -188,15 +193,14 @@ li {
   padding:10px;
 }
 
+.bottom-nav li a {
+  color: #2a9d8f;
+}
+
 .bottom-nav li a:hover {
-  color: turquoise;
+  color: #e76f51;
 }
 
-
-
-
-
-}
 
 /*for Desktop*/
 @media (min-width: 1024px){
