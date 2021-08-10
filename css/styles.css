@@ -17,6 +17,10 @@ img {
   margin: 0;
 }
 
+p a {
+  color: #e9c46a;
+}
+
 h1,h2 {
   color: #2a9d8f; 
   margin-top: 20px;
